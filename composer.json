@@ -1,0 +1,16 @@
+{
+    "name": "jackelineprado/inventariomodul-mykonosgestvet",
+    "description": "modulo funcional de inventario de gestvet mykonos distribuidora",
+    "autoload": {
+        "psr-4": {
+            "Jackelineprado\\InventariomodulMykonosgestvet\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Jacky",
+            "email": "jackelin.carolina@gmail.com"
+        }
+    ],
+    "require": {}
+}
