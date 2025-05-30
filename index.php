@@ -1,15 +1,32 @@
 <?php
-require_once 'app/config/config.php'; // ← Asegura que las constantes estén disponibles
-require_once 'app/config/conexion.php';
+// Composer autoload
+require_once _DIR_ . '/vendor/autoload.php';
 
+// Configuraciones
+require_once _DIR_ . '/app/config/config.php';
+require_once _DIR_ . '/app/config/conexion.php';
 
-$pagina = 'dashboard';
+// Obtener la página desde la URL
+$pagina = 'Dashboard'; 
 
-if(!empty($GET['url'])){
+if (!empty($_GET['url'])) {
     $pagina = $_GET['url'];
 }
 
-if (is_file('app/controller/' .$pagina.'.php')){
-    require_once 'app/controller/' .$pagina.'.php';
+// Convertir a nombre de clase
+$clase = ucfirst($pagina);
+$controlador = 'App\\Controller\\' . $clase.'Controller';
+
+
+// Verificar si la clase existe
+if (class_exists($controlador)) {
+    $obj = new $controlador();
+
+    if (method_exists($obj, 'index')) {
+        $obj->index();
+    } else {
+        echo "El método 'index' no existe en $clase.";
+    }
+} else {
+    echo "El controlador '$clase' no fue encontrado.";
 }
-?>

@@ -1,7 +1,6 @@
 <?php
-
-require_once 'app/model/inventario.php';
-
+namespace App\Controller;
+use App\Model\Inventario;
 class DashboardController {
     private $inventario;
 
@@ -62,7 +61,7 @@ class DashboardController {
 
     private function mostrarVista() {
         $listaInventario = $this->inventario->consultarTodos();
-        include 'vista/dashboard.php';
+        include BASE_PATH . 'vista/dashboard.php';
     }
 }
 

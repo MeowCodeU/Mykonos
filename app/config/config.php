@@ -1,7 +1,10 @@
 <?php
 #BASE DE DATOS 
-define ('_DB_NAME_', 'mykonos'); 
-define ('_DB_HOST_', 'localhost'); 
-define ('_DB_USER_', 'root'); 
-define ('_DB_PASS_', '');
+define ('DB_NAME', 'mykonos'); 
+define ('DB_HOST', 'localhost'); 
+define ('DB_USER', 'root'); 
+define ('DB_PASS', '');
+
+define('BASE_PATH', _DIR_ . '/../../'); 
+
 ?>

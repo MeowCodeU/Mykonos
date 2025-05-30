@@ -3,7 +3,7 @@
     "description": "modulo funcional de inventario de gestvet mykonos distribuidora",
     "autoload": {
         "psr-4": {
-            "Jackelineprado\\InventariomodulMykonosgestvet\\": "src/"
+            "App\\": "app/"
         }
     },
     "authors": [

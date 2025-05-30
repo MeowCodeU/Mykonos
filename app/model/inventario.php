@@ -1,5 +1,8 @@
 <?php
-require_once 'app/config/conexion.php';
+namespace App\Model;
+use App\Config\Conexion;
+use PDO;
+use PDOException;
 
 class Inventario extends Conexion {
     private $id;
@@ -76,7 +79,7 @@ class Inventario extends Conexion {
             $stmt->bindParam(':vencimiento', $this->vencimiento);
             $stmt->execute();
             return $this->con->lastInsertId();
-        } catch (PDOException $e) {
+        } catch (PDOException $e) { // Error en la conexión
             die("Error al insertar: " . $e->getMessage());
         }
     }

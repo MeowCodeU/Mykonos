@@ -1,4 +1,7 @@
 <?php
+namespace App\Config;
+use PDO;
+use PDOException;
 class Conexion{
     protected $con;
     private $host;
@@ -37,4 +40,4 @@ class Conexion{
         return $this->db;
     }
 }
-?>  
+?>
